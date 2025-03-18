@@ -41,7 +41,6 @@ func (pc *pokeCache) Get(key string) ([]byte, bool) {
 	defer pc.mu.Unlock()
 	elem, ok := pc.cacheMap[key]
 	if !ok {
-		fmt.Println("err: entry not found")
 		return nil, false
 	}
 	return elem.val, true

@@ -43,5 +43,10 @@ func initCommands() {
 			description: "Displays a the previous page of locations",
 			callback:    commandMapb,
 		},
+		"explore": {
+			name:        "explore",
+			description: "Explore a given location",
+			callback:    commandExplore,
+		},
 	}
 }
