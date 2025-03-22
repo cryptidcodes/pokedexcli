@@ -8,15 +8,18 @@ import (
 
 var commands map[string]cliCommand
 
+var userPokedex Pokedex
+
 func main() {
 	// initialize commands list and pokeapi client
 	initCommands()
 	pokeClient := pokeapi.NewClient(5 * time.Second)
+	// initialize the pokedexMap
+	userPokedex.pokedexMap = make(map[string]pokeapi.RespPokemon)
 	// create a pointer to a config struct
 	cfg := &config{
 		pokeapiClient: pokeClient,
 	}
-
 	// start the REPL
 	startRepl(cfg)
 }
@@ -47,6 +50,11 @@ func initCommands() {
 			name:        "explore",
 			description: "Explore a given location",
 			callback:    commandExplore,
+		},
+		"catch": {
+			name:        "catch",
+			description: "Catch a pokemon",
+			callback:    commandCatch,
 		},
 	}
 }

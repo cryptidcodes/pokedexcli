@@ -51,5 +51,6 @@ func (c *Client) ListLocations(pageURL *string) (RespLocations, error) {
 		return RespLocations{}, err
 	}
 
+	// return the data struct
 	return locationsResp, nil
 }

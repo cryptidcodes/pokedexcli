@@ -1,2 +1,4 @@
 pokedexcli
 repl.log
+repl_test.go
+internal/pokeapi/pokecache_test.go
